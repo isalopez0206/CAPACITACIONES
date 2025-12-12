@@ -1,7 +1,58 @@
 /* Importacion de las variables de entorno */
 @import url(./variables.css);
 
+html{
+    font-family: var(--main-font);
+    font-size: 62.5%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    scrollbar-width: none;
+}
+
 /* Ocultar formularios por defecto para evitar parpadeo; JS mostrará el correcto */
 .login-form {
 	display: none;
+    margin: 2rem auto;
+    width: 34rem;
+}
+
+.login-fieldsey {
+    border: 0.2rem solid var(--gray-400);
+    padding: 2rem;
+    border-radius: 0.8rem;
+}
+
+.login-legend {
+    text-align: center;
+    font-size: var(--fs-sm);
+    font-weight: bold;
+}
+
+.login-label {
+    font-size: var(--fs-xs);
+    display: block;
+    margin-top: 1.2rem;
+    font-weight: 600;
+}
+
+.login-select, .login-input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    border: 0.1rem solid var(--gray-400);
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+}
+
+
+.login-button {
+    margin-top: 1.8rem;
+    width: 100%;
+    padding: 1rem;
+    background: #2255ff;
+    color: var(--white);
+    border-radius: 0.6rem;
+    cursor: pointer;
 }
