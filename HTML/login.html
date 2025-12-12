@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesion</title>
+    <link rel="stylesheet" href="../CSS/login.css">
+</head>
+<body>
+    <!-- LOGIN TAT -->
+    <form id="login-tat" class="login-form">
+        <fieldset class="login-fieldset">
+            <legend class="login-legend">login TAT</legend>
+
+            <label for="nombre1" class="login-label">Nombre Completo: </label>
+            <input type="text" id="nombre1" class="login-input">
+
+            <label for="tipo_doc1" class="login-label">Tipo de Documento: </label>
+            <select id="tipo_doc1" class="login-select">
+                <option value="">Seleccione...</option>
+                <option value="CC">Cédula de Ciudadanía</option>
+                <option value="TI">Tarjeta de Identidad</option>
+                <option value="CE">Cédula de Extranjería...</option>
+            </select>
+
+            <label for="num_doc1" class="login-label">Número de Documento: </label>
+            <input type="number" id="num_doc1" class="login-input">
+
+            <label for="cargo1" class="login-label">Cargo: </label>
+            <select id="cargo1" class="login-select">
+                <option value="">Seleccione...</option>
+                <option value="aux_logistico">Auxiliar Logístico</option>
+                <option value="aux_separacion">Auxiliar de Separación</option>
+                <option value="lider_despacho">Líder de Separacion</option>
+                <option value="lider_recibo">Lider de Recibo</option>
+            </select>
+
+            <button class="login-button">Iniciar Sesión</button>
+        </fieldset>
+    </form>
+
+    <!-- LOGIN TYM  -->
+     <form id="login-tym" class="login-form">
+        <fieldset class="login-fieldset">
+            <legend class="login-legend">Login TYM </legend>
+
+            <label for="nombre2" class="login-label"> Nombre Completo: </label>
+            <input type="text" id="nombre2" class="login-input">
+
+            <label for="tipo_doc2" class="login-label">Tipo de Documento: </label>
+            <select id="tipo_doc2" class="login-select">
+                <option value="">Seleccione...</option>
+                <option value="CC">Cédula de Ciudadanía</option>
+                <option value="TI">Tarjeta de Identidad</option>
+                <option value="CE">Cédula de Extranjería</option>
+            </select>
+
+            <label for="num_doc2" class="login-label"> Número de Documento: </label>
+            <input type="number" id="num_doc2" class="login-input">
+
+            <label for="cargo2" class="login-label">Cargo: </label>
+            <select id="cargo2" class="login-select">
+                <option value="">Seleccione...</option>
+                <option value="aux_logistico">Auxiliar Logístico</option>
+                <option value="aux_separacion">Auxiliar de Separación</option>
+                <option value="lider_despacho">Líder de Despacho</option>
+                <option value="lider_recibo">Líder de Recibo</option>
+            </select>
+
+            <button class="login-button"> Iniciar Sesión</button>
+        </fieldset>
+    </form>
+
+<script src="login.js"></script>
+</body>
+</html>

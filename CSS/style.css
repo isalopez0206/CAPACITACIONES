@@ -1,122 +1,5 @@
-:root {
-    /* Primary color blue*/
-
-    --primary1-950: #008AD1;
-    --primary1-900: #038ED2;
-    --primary1-800: #0290D4;
-    --primary1-700: #0292D5;
-    --primary1-600: #0294D6;
-    --primary1-500: #0295D7;
-    --primary1-400: #0197D9;
-    --primary1-300: #0199DB;
-    --primary1-200: #009BDC;
-    --primary1-100: #009EE2;
-
-    /* Primary color orange*/
-
-    --primary2-950: #E47D1E;
-    --primary2-900: #E6801E;
-    --primary2-800: #E08020;
-    --primary2-700: #DE8120;
-    --primary2-600: #E08420;
-    --primary2-500: #E68A1E;
-    --primary2-400: #EB901B;
-    --primary2-300: #EE9419;
-    --primary2-200: #EF951C;
-    --primary2-100: #F1971B;
-    --primary2-50: #F49A15;
-
-    /* Secundary color red*/
-
-    --secundary1-950:#F21F0D;
-    --secundary1-900:#E12723;
-    --secundary1-800:#D42D2C;
-    --secundary1-700:#CF2D2F;
-    --secundary1-600:#CA2D32;
-    --secundary1-500:#C62B36;
-    --secundary1-400:#C02C39;
-    --secundary1-300:#B72B3B;
-
-    /* Secundary color green*/
-
-    --secundary2-950:#447A30;
-    --secundary2-900:#437E32;
-    --secundary2-800:#428134;
-    --secundary2-700:#3F8534 ;
-    --secundary2-600:#3B8839;
-    --secundary2-500:#388C3B;
-    --secundary2-400:#37923F;
-    --secundary2-300:#2F9945;
-    --secundary2-200:#25A04C;
-    --secundary2-100:#18A654;
-
-    /* Secundary color king blue*/
-
-    --secundary3-950:#1260A4;
-    --secundary3-900:#1361AD;
-    --secundary3-800:#1463B4;
-    --secundary3-700:#1565C0;
-    --secundary3-600:#1564BB;
-    --secundary3-500:#1766C2;
-    --secundary3-400:#355AE1;
-
-    /* Secundary color yellow*/
-
-    --secundary4-950:#EFAF32;
-    --secundary4-900:#F1B231;
-    --secundary4-800:#F4B531;
-    --secundary4-700:#F6B830;
-    --secundary4-600:#F8BC2F;
-    --secundary4-500:#FBC02D;
-    --secundary4-400:#FCC22F;
-    --secundary4-300:#FDC637;
-    --secundary4-200:#FECA40;
-    --secundary4-100:#FFD255;
-    --secundary4-50:#FFD96E;
-
-    /* Secundary color blue*/
-
-    --secundary5-950:#023259;
-    --secundary5-900:#01345E;
-    --secundary5-800:#013663;
-    --secundary5-700:#013869;
-    --secundary5-600:#003B73;
-    --secundary5-500:#003B75;
-    --secundary5-400:#003D7C;
-    --secundary5-300:#003F83;
-    --secundary5-200:#00408A;
-    --secundary5-100:#004191; 
-
-    /* Basic color*/
-    --white: #fff;
-    --black: #000;
-    --gray-950: #101010;
-    --gray-900: #262626;
-    --gray-800: #3B3B3B;
-    --gray-700: #515151;
-    --gray-600: #676767;
-    --gray-500: #7D7D7D;
-    --gray-400: #929292;
-    --gray-300: #A8A8A8;
-    --gray-200: #BEBEBE;
-    --gray-100: #D4D4D4;
-    --gray-50: #E9E9E9;
-
-    /* Font-family */
-    --main-font: Helvetica, Arial, sans-serif;
-
-    /* Font-size */
-    --fs-xxxxl: 8.0rem; /* Ultra grande */
-    --fs-xxxl: 6.4rem; /* Súper grande */
-    --fs-xxl: 4.8rem; /* Extra grande */
-    --fs-xl: 4.0rem;  /* Muy grande */
-    --fs-lg: 3.2rem;  /* Grande */
-    --fs-md: 2.4rem;  /* Mediano */
-    --fs-sm: 2.0rem;  /* Pequeño */
-    --fs-xs: 1.6rem;  /* Extra pequeño */
-    --fs-xxs: 1.4rem; /* Extra extra pequeño */
-    --fs-xxxs: 1.2rem; /* Mínimo */
-}
+/* Importar variables centralizadas */
+@import url('./variables.css');
 
 html{
     font-size: 62.5%;
@@ -131,12 +14,7 @@ body{
     font-family: var(--main-font);
     margin: 0;
     height: 100vh;
-    background: linear-gradient(
-        180deg,
-        #F49A15,
-        #FFFFFF,
-        #009EE2
-    );
+    background: var(--gradient-main);
     background-size: 300% 300%;
     animation: colorShift 5s ease-in-out infinite alternate;
 }
@@ -171,10 +49,6 @@ body{
     }
 }
 
-.principal-title {
-    font-size: var(--fs-xxxs);
-    color: var(--white);
-}
 
 .title{
     font-size: var(--fs-lg);
@@ -196,8 +70,8 @@ body{
     text-align: center;
     margin: 0;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s sease;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    box-shadow: var(--shadow-md);
 }
 
 .card::before {
@@ -207,19 +81,10 @@ body{
     left: -50%;
     width: 200%;
     height: 200%;
-    background: conic-gradient(
-        #ff0000,
-        #ff7300,
-        #ffee00,
-        #48ff00,
-        #00ffee,
-        #4500ff,
-        #ff00c8,
-        #ff0000
-    );
+    background: var(--gradient-rainbow);
     z-index: -1;
     animation: none;
-    transition: 0.3s;
+    transition: var(--transition-normal);
 }
 
 .card::after {
@@ -246,7 +111,7 @@ body{
 
 .card:hover {
     transform: scale(1.05) translateY(-0.5rem);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-lg);
 }
 
 .icon-img {
@@ -273,7 +138,7 @@ body{
     border-radius: 1rem;
     width: 100%;
     border: none;
-    transition: transform 0.2s;
+    transition: transform var(--transition-fast);
     font-size: var(--fs-xs);
 }
 

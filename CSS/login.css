@@ -1,0 +1,7 @@
+/* Importacion de las variables de entorno */
+@import url(./variables.css);
+
+/* Ocultar formularios por defecto para evitar parpadeo; JS mostrará el correcto */
+.login-form {
+	display: none;
+}
