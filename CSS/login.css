@@ -1,8 +1,11 @@
 /* Importacion de las variables de entorno */
 @import url(./variables.css);
 
-html{
+* {
+    box-sizing: border-box;
     font-family: var(--main-font);
+}
+html{
     font-size: 62.5%;
     height: 100%;
     margin: 0;
@@ -11,17 +14,53 @@ html{
     scrollbar-width: none;
 }
 
-/* Ocultar formularios por defecto para evitar parpadeo; JS mostrará el correcto */
-.login-form {
-	display: none;
-    margin: 2rem auto;
-    width: 34rem;
+body {
+    position: relative;
+    min-height: 100vh;
 }
 
-.login-fieldsey {
-    border: 0.2rem solid var(--gray-400);
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: var(--gradient-main);
+    background-size: 200% 200%;
+    filter: grayscale(100%) brightness(0.95);
+    transform-origin: center;
+    animation: bgMove 14s linear infinite, grayPulse 8s ease-in-out infinite alternate;
+}
+
+
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% {background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes grayPulse {
+    0% { filter: grayscale(100%) brightness(0.9); transform: scale(1); }
+    50% { filter: grayscale(40%) brightness(1.05); transform: scale(1.02); }
+    100% { filter: grayscale(100%) brightness(0.95); transform: scale(1); }
+
+}
+/* Ocultar formularios por defecto para evitar parpadeo; JS mostrará el correcto */
+.login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     padding: 2rem;
-    border-radius: 0.8rem;
+}
+
+.login-fieldset {
+    border: 0.2rem solid var(--gray-400);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    width: 40rem;
+    box-shadow: var(--shadow-lg);
+    backdrop-filter: blur(8px);
+    margin: 15rem auto;
 }
 
 .login-legend {
