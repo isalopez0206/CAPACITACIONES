@@ -19,7 +19,7 @@ html{
     object-fit: cover;
     margin: 0;
     z-index: -1;
-    filter: brightness(80%) contrast(110%);
+    filter: brightness(50%) contrast(100%);
 ;}
 
 .content {
@@ -27,4 +27,46 @@ html{
     z-index: 1;
     color: var(--white);
     padding: 2rem;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+    height: 80%;
+    flex-wrap: wrap;
+}
+
+
+.card1, .card2 {
+    background: var(--gray-900);
+    position: relative;
+    overflow: hidden;
+    width: 30rem;
+    height: 35rem;
+    display: flex;
+    flex-direction: column;    justify-content: space-between;
+    padding: 2rem;
+    border-radius: 2rem;
+    text-align: center;
+    margin: 20rem 0;
+    cursor: pointer;
+}
+
+.card1:hover, .card2:hover {
+    transform: scale(1.05) translateY(-0.5rem);
+    box-shadow: var(--shadow-lg);
+    background-color: var(--gray-800);
+}
+
+h1 {
+    color: var(--white);
+    font-size: large;
+}
+
+.desc {
+    color: var(--white);
+    font-size: medium;
 }
