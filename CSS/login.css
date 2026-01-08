@@ -55,7 +55,7 @@ body::before {
 
 .login-fieldset {
     border: 0.2rem solid var(--gray-400);
-    padding: 2.5rem;
+    padding: 3rem;
     border-radius: 1rem;
     width: 40rem;
     box-shadow: var(--shadow-lg);
