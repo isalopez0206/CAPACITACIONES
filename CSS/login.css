@@ -54,13 +54,14 @@ body::before {
 }
 
 .login-fieldset {
-    border: 0.2rem solid var(--gray-400);
+    border: 0.1rem solid var(--gray-400);
     padding: 3rem;
     border-radius: 1rem;
+    gap: 2rem;
     width: 40rem;
     box-shadow: var(--shadow-lg);
     backdrop-filter: blur(8px);
-    margin: 15rem auto;
+    margin: 5rem auto;
 }
 
 .login-legend {
@@ -85,13 +86,45 @@ body::before {
     box-sizing: border-box;
 }
 
+footer {
+    margin: 2rem;
+}
+
 
 .login-button {
-    margin-top: 1.8rem;
-    width: 100%;
-    padding: 1rem;
-    background: #2255ff;
+    margin-top: auto;
+    padding: 1.2rem 1.6rem;
+    background: var(--primary1-100);
     color: var(--white);
     border-radius: 0.6rem;
     cursor: pointer;
+    border-radius: 1rem;
+    width: 100%;
+    border: none;
+    transition: transform var(--transition-fast);
+    font-size: var(--fs-xs);
+}
+
+.login-button:hover {
+    transform: scale(1.05);
+}
+
+
+.logo-tym {
+    width: 15rem;
+    border-radius: 50%;
+}
+
+figure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.logo-tat {
+    width: 15rem;
+    height: auto;
+    display: block;
+    margin: 0 auto 2rem auto;
 }

@@ -44,8 +44,8 @@ html{
     background: var(--gray-900);
     position: relative;
     overflow: hidden;
-    width: 30rem;
-    height: 35rem;
+    width: 35rem;
+    height: 45rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -73,3 +73,29 @@ h1 {
     color: var(--white);
     font-size: medium;
 }
+
+.icon-mp4 {
+    width: 100%;
+    max-width: 20rem;
+    height: auto;
+    border-radius: 0.8rem;
+    object-fit: cover;
+}
+
+.btn {
+    margin-top: auto;
+    padding: 1.2rem 1.6rem;
+    background: var(--primary1-100);
+    color: var(--white);
+    cursor: pointer;
+    border-radius: 1rem;
+    width: 100%;
+    border: none;
+    transition: transform var(--transition-fast);
+    font-size: var(--fs-xs);
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
