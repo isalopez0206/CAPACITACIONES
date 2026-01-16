@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Primer Paso Seguro</title>
+    <link rel="stylesheet" href="../CSS/home1.css">
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="Barra principal">
+        <div class="nav-inner">
+            <div class="welcome">
+                <h1>Bienvenido a tu Primer Paso Seguro!</h1>
+                <p class="subtitle"> Aqui podrás identificar todo lo relacionado con gestion humana y nosotros identificaremos el nivel de conocimiento que tienes</p>
+            <div>
+            <div class="nav-actions">
+                <button id="startBtn" class="primary">Comenzar evaluación</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="page-header">
+            <h2>titulo</h2>
+            <p>Descripcion</p>
+        </header>
+
+        <main>
+            <form id="evalForm">
+                <section class="cards" aria-live="polite">
+
+                    <article class="card" data-qid="q1">
+                        <header>
+                            <h3>pregunta 1</h3>
+                            <p>descrpcion</p>
+                        </header>
+                        <figure>
+                            <img class="imagen1" src="" alt="">
+                        </figure>
+                        <fieldset>
+                            <legend>opciones</legend>
+                            <label class="option"><input type="radio" name="q1" value="A"> <span>A) Madrid</span></label>
+                            <label class="option"><input type="radio" name="q1" value="A"> <span>A) Madrid</span></label>
+                            <label class="option"><input type="radio" name="q1" value="A"> <span>A) Madrid</span></label>
+                            <label class="option"><input type="radio" name="q1" value="A"> <span>A) Madrid</span></label>
+                        </fieldset>
+                    </article>
+
+                    <article class="card" data-qid="q2">
+                        <header>
+                            <h3>Pregunta 2</h3>
+                            <p>Descripcion</p>
+                        </header>
+                        <figure>
+                            <img class="imagen2" src="" alt="">
+                        </figure>
+                        <fieldset>
+                            <legend>Selecciona</legend>
+                            <label class="option"><input type="radio" name="q2" value="verdadero"> <span>Verdadero</span></label>
+                            <label class="option"><input type="radio" name="q2" value="falso"> <span>Falso</span></label>
+                        </fieldset>
+                    </article>
+
+                    <article class="card" data-qid="q3">
+                        <header>
+                            <h3>Pregunta 3</h3>
+                            <p>Descripcion</p>
+                        </header>
+                        <figure>
+                            <img class="imagen3" src="" alt="">
+                        </figure>
+                        <fieldset>
+                            <legend>Selecciona las que considere necesarias</legend>
+                            <label class="option"> <input type="checkbox" name="q3" value="HTML"> <span>HTML</span></label>
+                            <label class="option"> <input type="checkbox" name="q3" value="HTML"> <span>HTML</span></label>
+                            <label class="option"> <input type="checkbox" name="q3" value="HTML"> <span>HTML</span></label>
+                            <label class="option"> <input type="checkbox" name="q3" value="HTML"> <span>HTML</span></label>
+                        </fieldset>
+                    </article>
+
+                    <article class="card" data-qid="q4">
+                        <header>
+                            <h3>pregunta 4</h3>
+                            <p>Descripcion</p>
+                        </header>
+                        <figure>
+                            <img class="imagen4" src="" alt="">
+                        </figure>
+                        <fieldset>
+                            <legend>Tu respuesta</legend>
+                            <textarea name="q4" placeholder="Escribe tu respuesta qui..."></textarea>
+                        </fieldset>
+                    </article>
+
+                    <article class="card" data-qid="q5">
+                        <header>
+                            <h3>pregunta 5</h3>
+                            <p>Descripcion</p>
+                        </header>
+                        <figure>
+                            <img class="imagen5" src="" alt="">
+                        </figure>
+                        <fieldset class="rating" data-name="q5">
+                            <legend>Selecciona</legend>
+                            <div class="stars" role="radiogroup" aria-label="rating">
+                                <button type="button" class="star" data-value="1" aria-pressed="false">1</button>
+                                <button type="button" class="star" data-value="2" aria-pressed="false">2</button>
+                                <button type="button" class="star" data-value="3" aria-pressed="false">3</button>
+                                <button type="button" class="star" data-value="4" aria-pressed="false">4</button>
+                                <button type="button" class="star" data-value="5" aria-pressed="false">5</button>
+                            </div>
+                            <input type="hidden" name="q5" value="">
+                        </fieldset>
+                    </article>
+                </section>
+
+                <div class="submit-row">
+                    <button type="button" class="primary" id="submitBtn">Enviar Evaluación</button>
+                    <button type="reset">Restablecer</button>
+                </div>
+
+                <div id="result" aria-live="polite"></div>
+            </form>
+        </main>
+    </div>
+    
+</body>
+</html>
