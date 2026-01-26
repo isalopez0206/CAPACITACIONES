@@ -82,7 +82,7 @@ h1 {
     object-fit: cover;
 }
 
-.btn {
+.btn1, .btn2 {
     margin-top: auto;
     padding: 1.2rem 1.6rem;
     background: var(--primary1-100);
