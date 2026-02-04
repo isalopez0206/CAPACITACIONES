@@ -1,6 +1,21 @@
 /* Importacion de las variables de entorno */
-@import url(./variables.css);
+:root{
+    --mod-sst: #0B4FA1;
+    --mod-accident: #374151;
+    --mod-pesv: #F2C94C;
+    --mod-brigada: #D32F2F;
+    --mod-ccl: #2E7D32;
+    --modcopasst: #072146;   
 
+    --card-bg: #FFFFFF;
+    --muted: #6B7280;
+    --text: #0F172A;
+    --radius: 1rem;
+    --shadow-1: 0 8px 24px rgba(12,18,40,0.06);
+    --shadow-2: 0 4px 10px rgba(12, 18, 40, 0.04);
+    --gap: 1.6rem;
+    --container-max: 90rem; 
+}
 * {
     box-sizing: border-box;
     font-family: var(--main-font);
@@ -14,11 +29,182 @@ html{
     color: var(--gray-950 );
 }
 
+.modulo {
+    max-width: var(--container-max);
+    margin: 2.4rem auto;
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 1.8rem;
+    box-shadow: var(--shadow-1);
+    border-left: 0.9rem solid var(--accent, #E5E7EB);
+    transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.modulo:hover {
+    transform:  translateY(-4px);
+    box-shadow: 0 14px 40px rgba(12, 18, 40, 0.08);
+}
+
+.modulo > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.modulo > header h2 {
+    margin: 0;
+    font-size: 2.0rem;
+    line-height: 1.15;
+    color: var(--accent, var(--text));
+    font-weight: 700;
+}
+
+.modulo-badge {
+    display: inline-block;
+    padding: .4rem .8rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--accent-text, var(--white));
+    background: var(--accent, #9CA3AF);
+    box-shadow: var(--shadow-2);
+}
+
+.modulo-info {
+    margin-bottom: var(--gap);
+    color: var(--muted);
+}
+
+.modulo-info h3 {
+    margin: 0 0 .6rem 0;
+    font-size: 1.4rem;
+    color: var(--text);
+    font-weight: 700;
+}
+
+.pregunta {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.98));
+    border-radius: .8rem;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow-2);
+    border: 1px solid rgba(15, 23, 42, 0.04);
+}
+
+.pregunta h3 {
+    margin: 0 0 .4rem 0;
+    font-size: 1.25rem;
+    color: var(--text);
+    font-weight: 700;
+}
+
+.pregunta p {
+    margin: 0 0 .8rem 0;
+    color: var(--muted);
+}
+
+fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+legend {
+    font-weight: 600;
+    margin-bottom: .6rem;
+    color: var(--text);
+}
+
+.option {
+    display: flex;
+    gap: .8rem;
+    align-items: center;
+    padding: .45rem .6rem;
+    border-radius: .6rem;
+    transition: background .12s ease, transform .08s ease;
+    cursor: pointer;
+}
+
+.option input{
+    transform: scale(1.05);
+}
+
+.input:hover {
+    background: rgba(12, 18, 40, 0.02);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 720px) {
+    .modulo{ 
+        padding: 1.2rem; 
+        margin: 1.2rem;
+    }
+    .modulo > header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .6rem;
+    }
+    .modulo > header h2 {
+        font-size: 1.6rem;
+    }
+}
+
+.modulo[data-modulo="1"] {
+    --accent: var(--mod-sst);
+    --accent-text: #FFFFFF;
+}
+
+.modulo[data-modulo="2"] {
+    --accent: var(--mod-accident);
+    --accent-text: #FFFFFF;
+}
+.modulo[data-modulo="3"] {
+    --accent: var(--mod-pesv);
+    --accent-text: #0B0B0B;
+}
+.modulo[data-modulo="4"] {
+    --accent: var(--mod-brigada);
+    --accent-text: #FFFFFF;
+}
+.modulo[data-modulo="5"] {
+    --accent: var(--mod-ccl);
+    --accent-text: #FFFFFF;
+}
+.modulo[data-modulo="6"] {
+    --accent: var(--mod-copasst);
+    --accent-text: #FFFFFF;
+}
+
+.modulo .modulo-info strong, .modulo > header h2 {
+    color: var(--accent);
+}
+
+.modulo .modulo-badge, .modulo .modulo-info .puntos-clave {
+    background: var(--accent);
+    color: var(--accent-text);
+}
+
+.puntos-clave {
+    display: inline-block;
+    padding: .6rem .9rem;
+    border-radius: .6rem;
+    margin-top: .8rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.option input:focus-visible, button:focus-visible {
+    outline: 3px solid rgba(0, 112, 243, 0.16);
+    outline-offset: 3px;
+}
+
 .navbar {
     width: 100%;
     background: var(--secundary5-100);
     color: var(--white);
-    position: absolute;
+    position: sticky;
     top: 0;
     left: 0;
     z-index: 1000;
