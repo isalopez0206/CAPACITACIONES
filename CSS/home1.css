@@ -5,7 +5,7 @@
     --mod-pesv: #F2C94C;
     --mod-brigada: #D32F2F;
     --mod-ccl: #2E7D32;
-    --modcopasst: #072146;   
+    --mod-copasst: #072146;   
 
     --card-bg: #FFFFFF;
     --muted: #6B7280;
@@ -201,15 +201,38 @@ legend {
 }
 
 .navbar {
-    width: 100%;
-    background: var(--secundary5-100);
-    color: var(--white);
     position: sticky;
     top: 0;
-    left: 0;
+    width: 100%;
+    background: var(--gradient-main);
+    background-size: 300% 300%;
+    animation: colorShift 5s ease-in-out infinite alternate;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    transform: translateY(0);
     z-index: 1000;
-    box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+
+@keyframes colorShift {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 0% 100%;
+    }
+}
+
+.navbar-hide {
+    transform: translateY(-100%);
+    box-shadow: none;
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        transition: transform 0.25s ease-in-out;
+    }
+} 
 
 .nav-inner {
     max-width: 120rem;

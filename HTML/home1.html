@@ -412,5 +412,21 @@
     </main>
 
     <script src="../HTML/evaluation.js"></script>
+    <script>
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.navbar');
+
+        window.addEventListener('scroll', function() {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if(currentScroll > lastScrollTop) {
+                navbar.classList.add('navbar-hide');
+            } else {
+                navbar.classList.remove('navbar-hide');
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        });
+    </script>
 </body>
 </html>
