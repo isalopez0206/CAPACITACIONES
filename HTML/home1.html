@@ -10,18 +10,20 @@
     <nav class="navbar" role="navigation" aria-label="Barra principal">
         <header>
             <h1>Bienvenido a tu Primer Paso Seguro!</h1>
-            <p class="subtitle">Aqui podras identificar todo lo relacionado con gestion humana y evaluaremos tu nivel de conocimiento</p>
-            <button id="startBtn" class="primary">Comenzar evaluación</button>
+            <p class="subtitle">Aquí podrás identificar todo lo relacionado con gestión humana y evaluaremos tu nivel de conocimiento</p>
         </header>
     </nav>
 
     <main>
-        <header>
-            <h2>Evaluación - Sistema de Gestión de Seguridad y Salud en el Trabajo</h2>
-            <p>Completa todos los módulos para finalizar la capacitación</p>
-        </header>
-
         <form id="evalForm">
+            <div class="carousel-container">
+                <button type="button" class="carousel-btn carousel-btn-prev" aria-label="Módulo anterior">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                
+                <div class="modulos-carousel">
             <!-- MODULO 1: Seguridad y Salud en el Trabajo -->
             <section class="modulo" data-modulo="1">
                 <header>
@@ -29,26 +31,12 @@
                     <span class="modulo-badge">1/6</span>
                 </header>
 
-                <article class="modulo-info">
-                    <h3>Información del Módulo</h3>
-                    <p><strong>¿Qué es la Seguridad y Salud en el Trabajo?</strong></p>
-                    <p>El SG - SST es una actividad multidisciplinaria dirigida a proteger y promover la salud de los colaboradores mediante la prevención y control de enfermedades y accidentes, y la eliminación o minimización de los factores y condiciones que ponen en peligro la salud y la seguridad en el trabajo.</p>
+                <div class="modulo-images">
+                    <img src="../IMG/SST.jpeg" alt="Imagen SST" class="modulo-img">
+                    <img src="../IMG/SST2.jpeg" alt="Imagen SST2" class="modulo-img">
+                </div>
 
-                    <p><strong>Política del Sistema de Gestión</strong></p>
-                    <p>La empresa TIENDAS Y MARCAS DEL EJE CAFETERO S.A.S se dedica a la distribución y comercialización de productos de consumo masivo y reconoce la importancia del capital humano. Por ello, prioriza la implementación y mejora del sistema de gestión de salud en el trabajo (SG - SST) y su plan de emergencia.</p>
-                    <p>La alta dirección se compromete a garantizar el bienestar físico, mental y social de los empleados, creando ambientes de trabajo saludables. Además, todos los empleados y visitantes deben participar activamente en el SG - SST a través del autocuidado, la identificación de riesgos y el reporte de condiciones inseguras.</p>
-                    <p>Para cumplir con los objetivos del SG - SST, la empresa se compromete a:</p>
-                    <ul>
-                        <li>Cumplir con la normativa vigente en riesgos laborales</li>
-                        <li>Identificar y evaluar peligros, estableciendo controles adecuados</li>
-                        <li>Proteger la seguridad y salud de los trabajadores mediante la mejora continua del SG - SST</li>
-                    </ul>
-                    <p>La organización asegura el cumplimiento de los requisitos legales y destina los recursos necesarios para la mejora continua del sistema.</p>
-                
-                </article>
-
-
-                <article class="pregunta" data-qid="q1">
+                <article class="pregunta" data-qid="q1" data-number="1">
                     <h3>Pregunta 1</h3>
                     <p><strong>La Seguridad y Salud en el Trabajo (SG - SST) busca principalmente:</strong></p>
                     <fieldset>
@@ -60,7 +48,7 @@
                     </fieldset>
                 </article>      
 
-                <article class="pregunta" data-qid="q2">
+                <article class="pregunta" data-qid="q2" data-number="2">
                     <h3>Pregunta 2</h3>
                     <p><strong>Según la política del sistema de gestión de TIENDAS Y MARCAS DEL EJE CAFETERO S.A.S, la alta dirección se compromete a:</strong> </p>
                     <fieldset>
@@ -72,7 +60,7 @@
                     </fieldset>
                 </article>
             
-                <article class="pregunta" data-qid="q3">
+                <article class="pregunta" data-qid="q3" data-number="3">
                     <h3>Pregunta 3</h3>
                     <p><strong>¿Cuál de las siguientes acciones NO corresponde a un compromiso de la empresa en el SG - SST?</strong></p>
                     <fieldset>
@@ -92,16 +80,12 @@
                     <span class="modulo-badge">2/6</span>
                 </header>
 
-                <article class="modulo-info">
-                    <h3>Información del Módulo</h3>
-                    <p><strong>Accidente de Trabajo</strong></p>
-                    <p>Es todo suceso repentino que sobrevenga por causa o con ocasion del trabajo y que produzca en el trabajador una lesión orgánica, una perturbación funcional o psiquiátrica, una invalidez o la muerte. También se considera accidente de trabajo el ocurrido durante la ejecución de órdenes del empleador o contratante, aun fuera del lugar y horas de trabajo.</p>
 
-                    <p><strong>Definicion de incidente (casi accidente)</strong></p>
-                    <p>Todo suceso acaecido en el curso del trabajo o en relación con este, que tuvo el potencial de ser un accidente en el que hubo personas involucradas sin que sufrieran lesiones o se presentaran daños a la propiedad y/o perdida en los procesos.</p>
-                </article>
+                <div class="modulo-images2">
+                    <img src="../IMG/ACCIDENTE LABORAL.jpeg" alt="Accidente Laboral" class="modulo-img2">
+                </div>
 
-                <article class="pregunta" data-qid="q4">
+                <article class="pregunta" data-qid="q4" data-number="1">
                     <h3>Pregunta 1</h3>
                     <p><strong>Juan es mensajero de la empresa y, mientras entregaba un pedido siguiendo instrucciones de su jefe, sufrió una caída en una vía pública fuera del horario laboral. De acuerdo con la definición de accidente de trabajo, este hecho se considera: </strong></p>
                     <fieldset>
@@ -113,7 +97,7 @@
                     </fieldset>
                 </article>
 
-                <article class="pregunta" data-qid="q5">
+                <article class="pregunta" data-qid="q5" data-number="2">
                     <h3>Pregunta 2</h3>
                     <p><strong>En una bodega, un trabajador resbala por un derrame de liquido. No se lesiona y continúa su labor sin reportar lo ocurrido. Desde el enfoque del SG - SST, la principal consecuencia de no reportar este hecho es que:</strong></p>
                     <fieldset>
@@ -125,7 +109,7 @@
                     </fieldset>
                 </article>
 
-                <article class="pregunta" data-qid="q6">
+                <article class="pregunta" data-qid="q6" data-number="3">
                     <h3>Pregunta 3</h3>
                     <p><strong>¿Cuál de las siguientes situaciones evidencia mejor la diferencia entre un accidente de trabajo y un incidente?</strong></p>
                     <fieldset>
@@ -145,31 +129,12 @@
                     <span class="modulo-badge">3/6</span>
                 </header>
 
-                <article class="modulo-info">
-                    <h3>Información del Módulo</h3>
-                    <p><strong>¿Qué es el Plan Estratégico de Seguridad Vial (PESV)?</strong></p>
-                    <p>El PESV es una estrategia integral de la empresa para prevenir accidentes de tránsito. Se fundamenta en cinco pilares:</p>
+                <div class="modulo-images3">
+                    <img src="../IMG/PLAN ESTRATEGICO.jpeg" alt="Plan estrategico" class="modulo-img3">
+                    <img src="../IMG/PESV.jpeg" alt="PESV" class="modulo-img3">
+                </div>
 
-                    <p><strong>Pilares del PESV</strong></p>
-                    <ul>
-                        <li><strong>Comportamiento humano:</strong> Decisiones y conductas seguras del conductor</li>
-                        <li><strong>Gestión institucional:</strong> Políticas y supervisión empresarial</li>
-                        <li><strong>Equipos y vehículos seguros:</strong> Mantenimiento preventivo y tecnología</li>
-                        <li><strong>Infraestructura segura:</strong> Vías y rutas en condiciones óptimas</li>
-                        <li><strong>Atención a víctimas:</strong> Protocolo de emergencia y primeros auxilios</li>
-                    </ul>
-
-                    <p><strong>Políticas de Regulación del PESV:</strong></p>
-                    <ul>
-                        <li>Regulación de horas de conducción y descanso</li>
-                        <li>Regulación de la velocidad según la vía</li>
-                        <li>Uso obligatorio del cinturón de seguridad</li>
-                        <li>Prohibición de equipos de comunicación mientras se conduce</li>
-                        <li>Uso obligatorio de elementos de protección personal</li>
-                    </ul>
-                </article>
-
-                <article class="pregunta" data-qid="q7">
+                <article class="pregunta" data-qid="q7" data-number="1">
                     <h3>Pregunta 1</h3>
                     <p><strong>Vas conduciendo un vehículo de la empresa y llegas tarde a una entrega. La vía está despejada. ¿Qué haces?</strong></p>
                     <fieldset>
@@ -181,7 +146,7 @@
                     </fieldset>
                 </article>
 
-                <article class="pregunta" data-qid="q8">
+                <article class="pregunta" data-qid="q8" data-number="2">
                     <h3>Pregunta 2</h3>
                     <p><strong>Has cumplido varias horas de conducción y sientes fatiga, pero aún falta un tramo del recorrido. ¿Qué decisión tomas?</strong></p>
                     <fieldset>
@@ -193,6 +158,19 @@
                     </fieldset>
                 </article>
 
+                <article class="pregunta" data-qid="q9" data-number="3">
+                    <h3>Pregunta 3</h3>
+                    <p><strong>Durante la conducción de un vehículo de la empresa, el uso del cinturón de seguridad es obligatorio en todo momento, sin importar la distancia del recorrido.</strong></p>
+                    <fieldset>
+                        <legend>Selecciona la respuesta correcta</legend>
+                        <label class="option"><input type="radio" name="q9" value="A"><span>A) Verdadero</span></label>
+                        <label class="option"><input type="radio" name="q9" value="B"><span>B) Falso</span></label>
+                    </fieldset>
+                </article>
+
+                
+
+
             </section>
 
             <!-- Modulo 6: protocolo de Respuesta en Accidentes de transito -->
@@ -202,55 +180,13 @@
                     <span class="modulo-badge">4/6</span>
                 </header>
 
-                            
-                <article class="modulo-info">
-                    <h3>Información del Módulo</h3>
-                    <p><strong>¿Qué es el Plan de Emergencias?</strong></p>
-                    <p>Es un conjunto de acciones organizadas para dar respuesta inmediata a la ocurrencia de situaciones de desastres en las empresas.</p>
+                <div class="modulo-images4">
+                    <img src="../IMG/PLAN EMERGENCIA.jpeg" alt="Plan Emergencia" class="modulo-img4">
+                    <img src="../IMG/PLAN EMERGENCIA2.jpeg" alt="Plan Emergencia 2" class="modulo-img4">
+                </div>
 
-                    
-                    <p><strong>Procedimiento en Caso de Emergencia</strong></p>
-                    <ol>
-                        <li>Conserve la calma</li>
-                        <li>En caso de sismo: ubíquese en zonas seguras</li>
-                        <li>En caso de incendio: notifique de inmediato</li>
-                        <li>Reporte paquetes sospechosos e inundaciones</li>
-                        <li>Aléjese de las zonas de riesgo</li>
-                        <li>Siga instrucciones de los líderes de evacuación</li>
-                        <li>Siga las rutas de evacuación caminando ágilmente</li>
-                        <li>Regrese solo si los grupos de apoyo lo autorizan</li>
-                    </ol>
-                    <p><strong> En caso de terremoto</strong></p>
-                    <p>Agáchese, cúbrase, agárrese; no usar escaleras durante el movimiento; si conduces, detenerse en lugar seguro y encender luces de emergencia. Seguir instrucciones de líderes de evacuación, rutas señalizadas, el reingreso se podrá realizar solo cuando lo autoricen.</p>
 
-                    
-                    
-                    <p><strong>¿Qué hacer en caso de accidente de tránsito?</strong></p>
-
-                    <p><strong>PROTEGER:</strong></p>
-                    <ul>
-                        <li>Después del impacto, si la persona está consciente, verificar su estado físico sin mover la cabeza o cuello</li>
-                        <li>Encender las luces de emergencia del vehículo</li>
-                        <li>Colocar conos o triángulos reflectivos de 30 a 50 metros del vehículo accidentado, hacia adelante y atrás (en vías de doble sentido)</li>
-                    </ul>
-
-                    <p><strong>ALERTAR:</strong></p>
-                    <ul>
-                        <li>Comunicarse al número de póliza del vehículo para atención inmediata</li>
-                        <li>Brindar información clara y detallada del accidente y ubicación exacta</li>
-                        <li>Comunicarse con personal de la empresa (área SST y/o Recursos Humanos)</li>
-                        <li>Seguir las indicaciones del área para reporte ante la ARL (Administradora de Riesgos Laborales)</li>
-                    </ul>
-
-                    <p><strong>SOCORRER:</strong></p>
-                    <ul>
-                        <li>No mover a los heridos graves, ya que se pueden agravar las lesiones</li>
-                        <li>Excepción: Si hay derrumbe, incendio o inundación inmediato, evacuar con cuidado</li>
-                        <li>Si hay hemorragia y cuentas con EPP (guantes de nitrilo, gafas), presionar con gasa limpia hasta llegada de médicos</li>
-                    </ul>
-                </article>
-
-                    <article class="pregunta" data-qid="q9">
+                    <article class="pregunta" data-qid="q10" data-number="1">
                         <h3>Pregunta 1</h3>
                         <p><strong>Los triángulos o conos reflectivos en caso de accidente deben ubicarse:</strong></p>
                         <fieldset>
@@ -262,7 +198,7 @@
                         </fieldset>
                     </article>
 
-                    <article class="pregunta" data-qid="q10">
+                    <article class="pregunta" data-qid="q11" data-number="2">
                         <h3>Pregunta 2</h3>
                         <p><strong>Durante una emergencia, la primera acción que debe realizar un trabajador es:</strong></p>
                         <fieldset>
@@ -274,7 +210,7 @@
                         </fieldset>
                     </article>
 
-                    <article class="pregunta" data-qid="q11">
+                    <article class="pregunta" data-qid="q12" data-number="3">
                         <h3>Pregunta 3</h3>
                         <p><strong>Una vez finalizada la emergencia, el reingreso a las instalaciones debe hacerse:</strong></p>
                         <fieldset>
@@ -294,16 +230,11 @@
                     <span class="modulo-badge">5/6</span>
                 </header>
 
-                <article class="modulo-info">
-                    <h3>Informacón del Módulo</h3>
-                    <p><strong>¿Cuál es el propósito?</strong></p>
-                    <p>Se conforma como una medida preventiva del acoso laboral que contribuye a proteger a los trabajadores de riesgos psicosociales que afectan la salud en lugares de trabajo.</p>
+                <div class="modulo-images5">
+                    <img src="../IMG/CONVIVENCIA LABORAL.jpeg" alt="Convivencia Laboral" class="modulo-img5">
+                </div>
 
-                    <p><strong>Acoso Laboral</strong></p>
-                    <p>Toda conducta persistente y demostrable, ejercida sobre un empleado trabajador por parte de un empleador, jefe, supervisor, compañero o subalterno, encaminada a infundir miedo, intimidación terror y angustria, a causar perjuicio laboral, generar desmotivación o inducir la renuncia.</p>
-                </article>
-
-                <article class="pregunta" data-qid="q13">
+                <article class="pregunta" data-qid="q13" data-number="1">
                     <h3>Pregunta 1</h3>
                     <p><strong>El acoso laboral se caracteriza por:</strong></p>
                     <fieldset>
@@ -315,7 +246,7 @@
                     </fieldset>
                 </article>
 
-                <article class="pregunta" data-qid="q14">
+                <article class="pregunta" data-qid="q14" data-number="2">
                     <h3>Pregunta 2</h3>
                     <p><strong>El comité de Convivencia Laboral es una medida ___________ del acoso laboral.</strong></p>
                     <fieldset>
@@ -327,7 +258,7 @@
                     </fieldset> 
                 </article>
 
-                <article class="pregunta" data-qid="q15">
+                <article class="pregunta" data-qid="q15" data-number="3">
                     <h3>Pregunta 3</h3>
                     <p><strong>El acoso Laboral solo puede ser ejercido por jefes o supervisores.</strong></p>
                     <fieldset>
@@ -344,26 +275,11 @@
                     <span class="modulo-badge">6/6</span>
                 </header>
 
-                <article class="modulo-info">
-                    <h3>Información del Módulo</h3>
-                    <p><strong>¿Qué es el COPASST?</strong></p>
-                    <p>Comité Paritario(Representantes de trabajadores y de la administración) de Seguridad y Salud en el Trabajo es una instancia de participación donde delegados de los trabajadores y la administración planifican peligros, evalúan riesgos y definen acciones preventivas.</p>
+                 <div class="modulo-images6">
+                    <img src="../IMG/COPASST.jpeg" alt="COPASST" class="modulo-img6">
+                </div>
 
-                    <p><strong>periodo y composicion</strong></p>
-                    <p>Su periodo de servicio esta predispuesto a 1 año(según las normativas internas de loa empresa), El COPASST está integradi oir delegados en paridad entre trabajadores y empleador.</p>
-
-                    <p><strong>Aspectos Principales</strong></p>
-                    <ul>
-                        <li>Reuniones periódicas de revisión</li>
-                        <li>Funciones del presidente</li>
-                        <li>Funciones generales del COPASST</li>
-                        <li>Elección de miembros</li>
-                        <li>Periodo de servicio</li>
-                        <li>Requisitos de pertenencia</li> 
-                    </ul>
-                </article>
-
-                <article class="pregunta" data-qid="q16">
+                <article class="pregunta" data-qid="q16" data-number="1">
                     <h3>Pregunta 1</h3>
                     <p><strong>El COPASST está integrado por:</strong></p>
                     <fieldset>
@@ -375,7 +291,7 @@
                     </fieldset>
                 </article>
 
-                <article class="pregunta" data-qid="q17">
+                <article class="pregunta" data-qid="q17" data-number="2">
                     <h3>pregunta 2</h3>
                     <p><strong>Una de las funciones principales del COPASST es:</strong></p>
                     <fieldset>
@@ -387,7 +303,7 @@
                     </fieldset>
                 </article>
 
-                <article class="pregunta" data-qid="q18">
+                <article class="pregunta" data-qid="q18" data-number="3">
                     <h3>Pregunta 3</h3>
                     <p><strong>El periodo de servicio en el COPASST es de:</strong></p>
                     <fieldset>
@@ -398,14 +314,20 @@
                         <label class="option"><input type="radio" name="q18" value="D"> <span>D) 1 año</span></label>
                     </fieldset>
                 </article>
+
+                <div class="formulario-actions">
+                    <button type="submit" class="btn-submit">Enviar Evaluación</button>
+                    <button type="reset" class="btn-reset">Limpiar Respuestas</button>
+                </div>
             </section>
-
-            <!-- ACCIONES DE FORMULARIO -->
-
-            <footer>
-                <button type="submit" class="btn-submit">Enviar Evaluacion</button>
-                <button type="reset" class="btn-reset">Limpiar Respuesta</button>
-            </footer>
+                </div>
+                
+                <button type="button" class="carousel-btn carousel-btn-next" aria-label="Próximo módulo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
 
             <output id="result" aria-live="polite"> </output>
         </form>
@@ -413,19 +335,62 @@
 
     <script src="../HTML/evaluation.js"></script>
     <script>
-        let lastScrollTop = 0;
+        // Carousel navigation
+        const carousel = document.querySelector('.modulos-carousel');
+        const prevBtn = document.querySelector('.carousel-btn-prev');
+        const nextBtn = document.querySelector('.carousel-btn-next');
+        const modulos = document.querySelectorAll('.modulo');
+        let currentIndex = 0;
+
+        function scrollToModule(index) {
+            if (index < 0) index = 0;
+            if (index >= modulos.length) index = modulos.length - 1;
+            
+            currentIndex = index;
+            const scrollAmount = modulos[index].offsetLeft;
+            carousel.scrollLeft = scrollAmount;
+            
+            updateButtonStates();
+        }
+
+        function updateButtonStates() {
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex === modulos.length - 1;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            scrollToModule(currentIndex - 1);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            scrollToModule(currentIndex + 1);
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                scrollToModule(currentIndex + 1);
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                scrollToModule(currentIndex - 1);
+            }
+        });
+
+        // Initialize
+        updateButtonStates();
+
+        // Hide navbar on scroll - mantenerlo escondido hasta volver al tope
         const navbar = document.querySelector('.navbar');
 
         window.addEventListener('scroll', function() {
             let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-            if(currentScroll > lastScrollTop) {
+            if(currentScroll > 0) {
                 navbar.classList.add('navbar-hide');
             } else {
                 navbar.classList.remove('navbar-hide');
             }
-
-            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
         });
     </script>
 </body>
