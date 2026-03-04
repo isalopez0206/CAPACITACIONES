@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Resultados de Evaluación </title>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../CSS/resultado1.css">
+</head>
+<body>
+    
+<header class="contenerdor-resultados">
+    <h1>Resultados de tu Evaluación </h1>    
+</header>
+
+<main>
+    <section aria-labelledby="resumen-titulo">
+        <header>
+            <h2 id="resumen-titulo">Resumen General</h2>
+        </header>
+
+        <article>
+            <p id="porcentajeFinal">0%</p>
+            <p>Resultado total obtenido</p>
+        </article>
+    </section>
+
+    <section aria-labelledby="grafico-titulo">
+        <header>
+            <h2 id="grafico-titulo">Desempeño por Módulo</h2>
+        </header>
+
+        <figure>
+            <canvas id="graficoResultados"></canvas>
+            <figcaption>
+                porcentaje obtenido en cada módulo (cada módulo contiene 3 preguntas).
+            </figcaption>
+        </figure>
+    </section>
+</main>
+
+<footer>
+    <nav>
+        <a href="home1.html" class="boton">Volver al Inicio</a>
+    </nav>
+</footer>
+
+<script src="evaluation.js"></script>
+</body>
+</html>

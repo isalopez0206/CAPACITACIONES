@@ -1,0 +1,73 @@
+/* Importar variables centralizadas */
+@import url('./variables.css');
+
+body {
+    font-family: var(--main-fon);
+    margin: 0;
+    background-color: #f2f4f8;
+    color: #333333;
+}
+
+header {
+    text-align: center;
+    padding: 2rem;
+    background-color: #1e88e5;
+    color: white;
+}
+
+main {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+section header h2 {
+    margin-bottom: 1rem;
+}
+
+article {
+    text-align: center;
+    padding: 2rem;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 10px;
+}
+
+#porcentajeFinal {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+figure {
+    margin: 0;
+}
+
+canvas {
+    max-width: 100%;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+}
+
+.boton {
+    text-decoration: none;
+    padding: 12px 25px;
+    background-color: #333333;
+    color: white;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background-color: #555555;
+}
