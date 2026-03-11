@@ -92,7 +92,6 @@ if (form){
 
 /* GRAFICO */
 
-
 let chartInstance = null;
 
 function generarGrafico(datos) {
@@ -112,26 +111,44 @@ function generarGrafico(datos) {
 
         data:{
             labels:[
-                "Módulo 1",
-                "Módulo 2",
-                "Módulo 3",
-                "Módulo 4",
-                "Módulo 5",
-                "Módulo 6"
+                "SST",
+                "Accidentes",
+                "PESV",
+                "Brigada",
+                "CCL",
+                "COPASST"
             ],
 
             datasets:[{
 
                 data: datos,
 
-                backgroudColor: [
-                    "#0B4FA1",
-                    "#2563EB",
-                    "#3B82F6",
-                    "#60A5FA",
-                    "#93C5FD",
-                    "#BFD8FE"
-                ],
+                backgroundColor: function(context){
+                    const chart = context.chart;
+                    const {ctx, chartArea} = chart;
+
+                    if (!chartArea) {
+                        return [
+                            "#0B4FA1",
+                            "#374151",
+                            "#F2C94C",
+                            "#D32F2F",
+                            "#2E7D32",
+                            "#072146"
+                        ][context.dataIndex];
+                    }
+
+                    const gradientes = [
+                        crearGradiente(ctx, chartArea, "#0B4FA1", "#4A90E2"),
+                        crearGradiente(ctx, chartArea, "#374151", "#6B7280"),
+                        crearGradiente(ctx, chartArea, "#F2C94C", "#FDE68A"),
+                        crearGradiente(ctx, chartArea, "#D32F2F", "#EF5350"),
+                        crearGradiente(ctx, chartArea, "#2E7D32", "#66BB6A"),
+                        crearGradiente(ctx, chartArea, "#072146", "#1A3D7C")
+                    ];
+
+                    return gradientes[context.dataIndex];
+                },
 
                 borderRadius: 8,
                 barThickness: 50
@@ -141,7 +158,7 @@ function generarGrafico(datos) {
         options: {
             responsive: true,
 
-            Plugins:{
+            plugins:{
                 legend:{
                     display:false
                 }
@@ -151,28 +168,43 @@ function generarGrafico(datos) {
                 callbacks: {
                     label: (context) => context.raw + "%"
                 }
+            },
+
+            scales: {
+                x: {
+                    grid: {
+                        display: false
+                    }
+                },
+
+                y: {
+                    beginAtZero: true,
+                    max: 100,
+
+                    ticks: {
+                        callback: (value) => value + "%"
+                    }
+                }
             }
         },
 
-        scales: {
-            x: {
-                grid: {
-                    display: false
-                }
-            },
-
-            y: {
-                beginAtZero: true,
-                max: 100,
-
-                ticks: {
-                    callbacks: (value) => value + "%"
-                }
-            }
-        }
 
     });
 }    
+
+function crearGradiente(ctx, chartArea, color1, color2){
+                    const gradient = ctx.createLinearGradient(
+                        0,
+                        chartArea.bottom,
+                        0,
+                        chartArea.top
+                    );
+
+                    gradient.addColorStop(0, color1);
+                    gradient.addColorStop(1, color2);
+
+                    return gradient;
+                }
 
 /* RESULTADOS */
 
