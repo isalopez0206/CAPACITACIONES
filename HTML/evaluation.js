@@ -14,78 +14,104 @@ const respuestasCorrectas = {
     q1: "B",
     q2: "B",
     q3: "D",
+
     q4: "C",
     q5: "C",
     q6: "B",
+
     q7: "B",
     q8: "C",
     q9: "A",
+
     q10: "C",
     q11: "C",
     q12: "C",
+
     q13: "B",
     q14: "B",
     q15: "B",
+
     q16: "B",
     q17: "B",
     q18: "B"
 };
 
-/* SUBMIT */
+/* SUBMIT FORMULARIO*/
 
 
-document.getElementById("evalForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+const form = document.getElementById("evalForm");
 
-    const formData = new FormData(this);
+if (form){
+    form.addEventListener("submit", function(e){
+        e.preventDefault();
 
-    let resultadosModulo = [0,0,0,0,0,0];
-    let totalCorrectas = 0;
-    
-    for (let pregunta in respuestasCorrectas) {
-        const respuestasUsuario = formData.get(pregunta);
+        const formData = new FormData(this);
 
-        if (!respuestasUsuario) {
-            alert("Debes responder todas las pregunatas.");
-            return;
+        let resultadosModulo = [0,0,0,0,0,0];
+        let totalCorrectas = 0;
+
+        for(let pregunta in respuestasCorrectas) {
+            const respuestaUsuario = formData.get(pregunta);
+
+            if(!respuestaUsuario) {
+                alert("Debes responder todas las preguntas.");
+                return;
+            }
+
+            if (respuestaUsuario === respuestasCorrectas[pregunta]) {
+                totalCorrectas++;
+
+                const numeroPregunta = parseInt(pregunta.replace("q", ""));
+                const indiceModulo = Math.floor((numeroPregunta - 1)/ 3);
+
+                resultadosModulo[indiceModulo]++;
+            }
         }
 
-        if(respuestasUsuario === respuestasCorrectas[pregunta]) {
-            totalCorrectas++;
+        /* PORCENTAJE POR MODULO */
 
-            const numeroPregunta = parseInt(pregunta.replace("q", ""));
-            const indiceModulo = Math.floor((numeroPregunta - 1) / 3);
+        const porcentajesModulo = resultadosModulo.map(correctas => 
+            Math.round((correctas/3)*100)
+        );
 
-            resultadosModulo[indiceModulo]++;
-        }
+        /* PORCENTAJE TOTAL */
+        
+        const porcentajeTotal = Math.round((totalCorrectas / 18) * 100);
 
-    }
+        /* GUARDA RESULTADOS */
 
-    const porcentajesModulo = resultadosModulo.map(correctas => (correctas / 3) * 100);
-    const porcentajeTotal = (totalCorrectas /18) * 100;
+        localStorage.setItem("porcentajeTotal", porcentajeTotal);
+        localStorage.setItem("porcentajesModulo", JSON.stringify(porcentajesModulo));
 
-    loscalStorage.setItem("porcentajeTotal", porcentajeTotal);
-    localStorage.setItem("porcentajesModulo", JSON.stringify(porcentajesModulo));
+        /* IR AL RESULTADO */
 
-    window.location.href = "resultado.html";
-});
+        window.location.href = "resultado1.html";
+
+    });
+}
 
 /* GRAFICO */
 
 
-let charInstance = null;
+let chartInstance = null;
 
 function generarGrafico(datos) {
-    const ctx = document.getElementById("graficoResultados").getContext("2d");
 
-    if (charInstance) {
-        charInstance.destroy();
+    const canvas = document.getElementById("graficoResultados");
+
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext("2d");
+
+    if(chartInstance){
+        chartInstance.destroy();
     }
 
-    charInstance = new Chart(ctx, {
+    chartInstance = new Chart(ctx,{
         type: "bar",
-        data: {
-            labels: [
+
+        data:{
+            labels:[
                 "Módulo 1",
                 "Módulo 2",
                 "Módulo 3",
@@ -93,38 +119,77 @@ function generarGrafico(datos) {
                 "Módulo 5",
                 "Módulo 6"
             ],
-            datasets: [{
-                label: "Resultado por módulo (%)",
+
+            datasets:[{
+
                 data: datos,
-                borderWidth: 1
+
+                backgroudColor: [
+                    "#0B4FA1",
+                    "#2563EB",
+                    "#3B82F6",
+                    "#60A5FA",
+                    "#93C5FD",
+                    "#BFD8FE"
+                ],
+
+                borderRadius: 8,
+                barThickness: 50
             }]
         },
+
         options: {
             responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    max: 100
+
+            Plugins:{
+                legend:{
+                    display:false
+                }
+            },
+
+            tooltip: {
+                callbacks: {
+                    label: (context) => context.raw + "%"
+                }
+            }
+        },
+
+        scales: {
+            x: {
+                grid: {
+                    display: false
+                }
+            },
+
+            y: {
+                beginAtZero: true,
+                max: 100,
+
+                ticks: {
+                    callbacks: (value) => value + "%"
                 }
             }
         }
+
     });
-}
+}    
 
 /* RESULTADOS */
 
-if (window.location.pathname.includes("resultado.html")) {
+if (document.getElementById("graficoResultados")) {
+
     const porcentajeTotal = localStorage.getItem("porcentajeTotal");
+
     const porcentajesModulo = JSON.parse(localStorage.getItem("porcentajesModulo"));
 
-    if (porcentajeTotal && porcentajesModulo) {
-        const porcentajeEl = document.getElementById("porcentajeFinal");
 
-        if(porcentajeEl) {
-            porcentajeEl.innerText =
-            parseFloat(porcentajeTotal).toFixed(2) + "%";
-        }
 
-        generarGrafico(porcentajesModulo);
+    const porcentajeEl = document.getElementById("porcentajeFinal");
+
+    if(porcentajeEl) {
+
+        porcentajeEl.innerText = porcentajeTotal + "%";
     }
- }
+
+    generarGrafico(porcentajesModulo);
+    }

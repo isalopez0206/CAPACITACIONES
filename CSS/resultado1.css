@@ -31,7 +31,7 @@ body {
 
 .header-resultados p{
     font-size: 1rem;
-    color: var(#6b7280);
+    color: #6b7280;
 }
 
 /* CONTENERDOR PRINCIPAL */
@@ -92,7 +92,7 @@ body {
 
 .grafico-container canvas {
     width: 100% !important;
-    height: auto !important;
+    height: 22rem !important;
 }
 
 figcaption {
