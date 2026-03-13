@@ -12,6 +12,10 @@ const modules = [
     {
         prefix: "bod",
         evaluacion: "auxbodega_evaluation.html"
+    },
+    {
+        prefix: "jefe",
+        evaluacion: "jefe_evaluation.html"
     }
 ];
 
