@@ -23,7 +23,7 @@
 
 * {
     box-sizing: border-box;
-    font-family: var(--main-font);
+    font-family: 'Segoe UI', sans-serif;
 }
 
 html, body{
@@ -247,7 +247,7 @@ html, body{
 
 .modulo > header h2 {
     margin: 0;
-    font-size: var(--fs-sm);
+    font-size: 1.8rem;
     line-height: 1.15;
     color: var(--accent, var(--text));
     font-weight: 700;
