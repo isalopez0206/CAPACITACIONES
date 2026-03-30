@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado Auxiliar Logistico</title>
+
+    <!-- FUENTE MODERNA -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="../CSS/result_aux_log.css">
+</head>
+<body>
+    <header class="header-auxlog">
+        <h1>Resultados de la Evaluación</h1>
+        <p>Visualiza tu desempeño general y por módulos</p>
+    </header>
+
+    <main class="container-auxlog">
+
+        <!-- RESUMEN -->
+         <section class="card-auxlog" aria-labelledby="resumen-titulo">
+            <header>
+                <h2 id="resumen-auxlog" class="resumen-auxlog">Resultado General</h2>
+            </header>
+
+            <article class="resultado-total-auxlog">
+                <p id="porcentajeFinal-auxlog" class="porcentaje-auxlog">0%</p>
+                <p class="descripcion-auxlog">Resultado Total Obtenido</p>
+            </article>
+         </section>
+
+        <!-- GRAFICO -->
+        <section aria-labelledby="grafico-titulo">
+            <header>
+                <h2 id="grafico-container">Desempeño por Módulo</h2>
+            </header>
+
+            <figure class="grafico-container-auxlog">
+                <canvas id="graficoResultados"></canvas>
+                <figcaption>
+                    Porcentaje obtenido en cada pregunta.
+                </figcaption>
+            </figure>
+        </section>
+    </main>
+
+    <footer class="footer-resultados-auxlog">
+        <nav>
+            <a href="../HTML/cards_capacitacion.html" class="boton-volver-auxlog">
+                Volver al inicio
+            </a>
+        </nav>
+    </footer>
+
+    <script src="evaluacion_modulos.js"></script>
+</body>
+</html>
