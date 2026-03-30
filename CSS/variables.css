@@ -104,7 +104,7 @@
     --gray-50: #E9E9E9;
 
     /* ===== FUENTES ===== */
-    --main-font: Helvetica, Arial, sans-serif;
+    --main-font: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
     /* ===== TAMAÑOS DE FUENTE ===== */
     --fs-xxxxl: 8.0rem;  /* Ultra grande */

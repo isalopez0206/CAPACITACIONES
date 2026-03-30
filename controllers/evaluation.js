@@ -10,31 +10,7 @@ document.getElementById('startBtn')?.addEventListener('click', () => {
 /* RESPUESTAS CORRECTAS */
 
 
-const respuestasCorrectas = {
-    q1: "B",
-    q2: "B",
-    q3: "D",
-
-    q4: "C",
-    q5: "C",
-    q6: "B",
-
-    q7: "B",
-    q8: "C",
-    q9: "A",
-
-    q10: "C",
-    q11: "C",
-    q12: "C",
-
-    q13: "B",
-    q14: "B",
-    q15: "B",
-
-    q16: "B",
-    q17: "B",
-    q18: "B"
-};
+const respuestasCorrectas = window.EvaluationModel?.respuestasCorrectas;
 
 /* SUBMIT FORMULARIO*/
 
@@ -49,6 +25,11 @@ if (form){
 
         let resultadosModulo = [0,0,0,0,0,0];
         let totalCorrectas = 0;
+
+        if (!respuestasCorrectas || Object.keys(respuestasCorrectas).length === 0) {
+            alert("Error: no se cargaron las respuestas correctas (EvaluationModel).");
+            return;
+        }
 
         for(let pregunta in respuestasCorrectas) {
             const respuestaUsuario = formData.get(pregunta);

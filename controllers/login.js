@@ -110,7 +110,7 @@
 
       localStorage.setItem('usuarioActual', JSON.stringify(datos));
 
-      window.location.href = '../HTML/mode_capacitation.html';
+      window.location.href = 'mode_capacitation.html';
       
     });
   });

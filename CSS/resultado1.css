@@ -9,7 +9,7 @@
  */}
 
 body {
-    font-family: var(--main-fon);
+    font-family: var(--main-font);
     background: #F4F6F9;
     color: #1f2937;
     height: 100vh;
