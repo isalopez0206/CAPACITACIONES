@@ -203,9 +203,15 @@ if (document.getElementById("graficoResultados")) {
     const porcentajeTotal = localStorage.getItem("porcentajeTotal")
     const porcentajesModulo = JSON.parse(localStorage.getItem("porcentajesModulo"))
     const porcentajeEl = document.getElementById("porcentajeFinal")
+    const nombreUsuarioEl = document.getElementById("nombreUsuario")
 
     if(porcentajeEl) {
         porcentajeEl.innerText = porcentajeTotal + "%"
+    }
+
+    if(nombreUsuarioEl) {
+        const usuarioActual = localStorage.getItem("usuarioActual") || "Usuario"
+        nombreUsuarioEl.innerText = JSON.parse(usuarioActual).nombre
     }
 
     generarGrafico(porcentajesModulo)

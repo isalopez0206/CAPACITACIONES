@@ -253,7 +253,10 @@ window.clasificar = async function () {
 
 function cargarResultado() {
   const resultado = JSON.parse(localStorage.getItem('resultadoModuloEspecifico'))
-
+  const usuarioActual = JSON.parse(localStorage.getItem('usuarioActual'))
+  console.log(usuarioActual)
+  document.querySelector('#nombreUsuario').innerText = usuarioActual.nombre
+  
   if (!resultado) return
 
   const porcentajeEl = obtenerElementoPorcentaje()
