@@ -34,6 +34,13 @@ html, body{
     padding: 0;
     color: var(--gray-950 );
     overflow: hidden;
+    line-height: 1.2; /* antes usaba el valor por defecto más alto */
+}
+h1, h2, h3, h4 {
+    line-height: 1.1;
+}
+p, span, label, legend, .option {
+    line-height: 1.25;
 }
 
 .modulo {
@@ -41,7 +48,7 @@ html, body{
   width: 100%;
   min-height: auto;
   max-height: calc(100vh - 4rem);
-  overflow-y: auto;
+  overflow-y: hidden;
   scroll-snap-align: start;
   scroll-snap-stop: always;
   margin: 0;
@@ -334,8 +341,8 @@ html, body{
 .pregunta p {
     margin: 0 0 .4rem 0;
     color: var(--muted);
-    font-size: 3rem;
-    line-height: 1.4;
+    font-size: 2.2rem;      /* antes 3rem */
+    line-height: 1.2;  
 }
 
 fieldset {
@@ -373,12 +380,13 @@ legend {
     transform: translateY(-1px);
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1500px) {
     html, body{
         overflow: auto;
     }
     .modulo {
         grid-template-columns: repeat(2, 1fr);
+        overflow: auto;
     }
 }
 
