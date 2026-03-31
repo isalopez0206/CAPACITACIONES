@@ -18,6 +18,7 @@ import { neon } from 'https://esm.sh/jsr/@neon/serverless'
       const area = params.get('area')
       const formTat = document.getElementById('login-tat')
       const formTym = document.getElementById('login-tym')
+
       if (area === 'tat' || area === 'tym') {
         if (formTat) formTat.style.display = area === 'tat' ? 'block' : 'none'
         if (formTym) formTym.style.display = area === 'tym' ? 'block' : 'none'
@@ -32,6 +33,13 @@ import { neon } from 'https://esm.sh/jsr/@neon/serverless'
 
     function filtrarNumeros(input) {
       input.value = input.value.replace(/[^0-9]/g, '')
+    }
+
+    function limpiarLocalStorageSesion() {
+      localStorage.removeItem('usuarioActual')
+      localStorage.removeItem('porcentajeTotal')
+      localStorage.removeItem('porcentajesModulo')
+      localStorage.removeItem('resultadoModuloEspecifico')
     }
 
     const nombre1 = document.getElementById('nombre1')
@@ -54,7 +62,7 @@ import { neon } from 'https://esm.sh/jsr/@neon/serverless'
       if (!nombre.value.trim()) {
         errores.push('El nombre completo es obligatorio.')
       } else if (nombre.value.trim().length < 3) {
-        errores.push('El nombre debe tener al menos 3 carácteres')
+        errores.push('El nombre debe tener al menos 3 caracteres')
       }
 
       if (!tipo_doc.value.trim()) {
@@ -68,7 +76,7 @@ import { neon } from 'https://esm.sh/jsr/@neon/serverless'
       }
 
       if (!cargo.value) {
-        errores.push('Selecciones el cargo')
+        errores.push('Seleccione el cargo')
       }
 
       return errores
@@ -76,9 +84,9 @@ import { neon } from 'https://esm.sh/jsr/@neon/serverless'
 
     function recopilaDatos(form) {
       const nombre = form.querySelector('[id^="nombre"]').value.trim()
-      const tipo_doc = form.querySelector('[id^=tipo_doc]').value
-      const num_doc = form.querySelector('[id^=num_doc]').value
-      const cargo = form.querySelector('[id^=cargo]').value
+      const tipo_doc = form.querySelector('[id^="tipo_doc"]').value
+      const num_doc = form.querySelector('[id^="num_doc"]').value
+      const cargo = form.querySelector('[id^="cargo"]').value
       const area = new URLSearchParams(location.search).get('area') || 'desconocido'
 
       return {
@@ -86,23 +94,38 @@ import { neon } from 'https://esm.sh/jsr/@neon/serverless'
         tipo_doc,
         num_doc,
         cargo,
-        area,
-        fecha: new Date().toISOString()
+        area
       }
     }
 
-    async function guardarOIniciarSesion(datos) {
+    async function buscarUsuarioPorDocumento(num_doc) {
+      const result = await sql`
+        SELECT id, nombre, tipo_doc, num_doc, cargo, area, fecha
+        FROM usuarios
+        WHERE num_doc = ${num_doc}
+        LIMIT 1
+      `
+      return result[0] || null
+    }
+
+    async function crearUsuario(datos) {
       const result = await sql`
         INSERT INTO usuarios (nombre, tipo_doc, num_doc, cargo, area, fecha)
         VALUES (${datos.nombre}, ${datos.tipo_doc}, ${datos.num_doc}, ${datos.cargo}, ${datos.area}, NOW())
-        ON CONFLICT (tipo_doc, num_doc, area)
-        DO UPDATE SET
-          nombre = EXCLUDED.nombre,
-          cargo = EXCLUDED.cargo,
-          fecha = NOW()
         RETURNING id, nombre, tipo_doc, num_doc, cargo, area, fecha
       `
       return result[0]
+    }
+
+    async function iniciarSesionPorDocumento(datos) {
+      let usuario = await buscarUsuarioPorDocumento(datos.num_doc)
+
+      if (usuario) {
+        return usuario
+      }
+
+      usuario = await crearUsuario(datos)
+      return usuario
     }
 
     async function cargarResultadosUsuario(usuarioId) {
@@ -156,6 +179,7 @@ import { neon } from 'https://esm.sh/jsr/@neon/serverless'
     }
 
     const botones = document.querySelectorAll('.login-button')
+
     botones.forEach(boton => {
       boton.addEventListener('click', async function (e) {
         e.preventDefault()
@@ -164,16 +188,20 @@ import { neon } from 'https://esm.sh/jsr/@neon/serverless'
         const errores = validarFormulario(form)
 
         if (errores.length > 0) {
-          alert('Por favor corrige los siguientes errores: \n\n' + errores.join('\n'))
+          alert('Por favor corrige los siguientes errores:\n\n' + errores.join('\n'))
           return
         }
 
         const datos = recopilaDatos(form)
 
         try {
-          const usuario = await guardarOIniciarSesion(datos)
+          limpiarLocalStorageSesion()
+
+          const usuario = await iniciarSesionPorDocumento(datos)
+
           localStorage.setItem('usuarioActual', JSON.stringify(usuario))
           await cargarResultadosUsuario(usuario.id)
+
           window.location.href = 'mode_capacitation.html'
         } catch (error) {
           console.error(error)
