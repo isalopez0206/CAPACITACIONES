@@ -8,6 +8,7 @@ html{
     padding: 0;
     overflow: hidden;
     scrollbar-width: none;
+    font-family: var(--main-font);
 }
 body{
     margin: 0;
@@ -92,6 +93,7 @@ body{
 h1 {
     color: var(--white);
     font-size: large;
+    margin: 2rem 0;
 }
 
 .desc {

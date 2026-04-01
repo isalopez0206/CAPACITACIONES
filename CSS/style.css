@@ -81,7 +81,7 @@ body{
     left: -50%;
     width: 200%;
     height: 200%;
-    background: var(--gradient-rainbow);
+    background: var(--gradient-main);
     z-index: -1;
     animation: none;
     transition: var(--transition-normal);
